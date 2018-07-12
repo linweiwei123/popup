@@ -91,4 +91,6 @@ close | close popup
 
 ## demo
 
-![image](http://adstatic.oss-cn-beijing.aliyuncs.com/ad-activity.meiyou.com/dkd2/v4/qrcode2.png?x-oss-process=image/resize,m_fixed,h_400,w_400)
+https://linweiwei123.github.io/popup/example/index.html
+
+![image](./example/qrcode3.png)
