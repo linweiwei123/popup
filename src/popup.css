@@ -17,23 +17,11 @@
 }
 
 @keyframes bounceInUp {
-  0%, 60%, 75%, 90%, to {
-    animation-timing-function:cubic-bezier(.215, .61, .355, 1)
-  }
   0% {
     transform: translate3d(0, 100%, 0)
   }
-  60% {
-    transform:translate3d(0, -2%, 0)
-  }
-  75% {
-    transform:translate3d(0, 1%, 0)
-  }
-  90% {
-    transform:translate3d(0, -0.5%, 0)
-  }
   to {
-    transform:translateY(0)
+    transform: translateY(0)
   }
 }
 
@@ -65,6 +53,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 99;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -74,26 +63,27 @@
   width: 100%;
   max-height: 100%;
   left: 0;
+  z-index: 100;
   background-color: #ffffff;
   border-top-left-radius: 0.6rem;
   border-top-right-radius: 0.6rem;
-  transform: translateY(100%);
+  transform: translate3d(0, 100%, 0);
 }
 
 .meet-popup-slide-up {
-  animation: slideInUp ease-out 300ms forwards;
+  animation: slideInUp ease-out 200ms forwards;
 }
 
 .meet-popup-slide-down {
-  animation: slideOutDown ease-in 300ms forwards;
+  animation: slideOutDown ease-in 200ms forwards;
 }
 
 .meet-popup-bounce-up {
-  animation: bounceInUp 300ms forwards;
+  animation: bounceInUp ease-out 200ms 10ms forwards;
 }
 
 .meet-popup-bounce-down {
-  animation: bounceOutDown ease-in 300ms forwards;
+  animation: bounceOutDown ease-in 200ms forwards;
 }
 
 .popup-header {
@@ -131,6 +121,7 @@
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   -webkit-transform: translateZ(0px);
+  scroll-behavior: smooth;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2),(min-resolution:2dppx) {
@@ -146,7 +137,13 @@
 
 .popup-header .p-right {
   position: absolute;
-  right: 0.5rem;
+  height: 100%;
+  width: 4.2rem;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .meet-popup-open {
@@ -182,3 +179,9 @@
 .freeze{
   position: fixed;
 }
+
+
+.noscroll{
+  overflow: hidden;
+}
+
